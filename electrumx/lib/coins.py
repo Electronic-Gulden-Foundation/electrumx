@@ -3305,3 +3305,22 @@ class GravityZeroCoin(ScryptMixin, Coin):
     RPC_PORT = 36442
     ESTIMATE_FEE = 0.01
     RELAY_FEE = 0.01
+
+# Source: https://github.com/Electronic-Gulden-Foundation/egulden/
+class Egulden(Coin):
+    NAME = "eGulden"
+    SHORTNAME = "EFL"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("30")
+    P2SH_VERBYTES = [bytes.fromhex("05")]
+    WIF_BYTE = bytes.fromhex("b0")
+    GENESIS_HASH = '6d39f28ad01a7edd3e2374b355cf8c7f8dbc1c5e4596ad3642fa6d10c2599217'
+    DESERIALIZER = lib_tx.DeserializerSegWit
+    TX_COUNT = 5502192
+    TX_COUNT_HEIGHT = 850000
+    TX_PER_BLOCK = 10
+    RPC_PORT = 21015
+    REORG_LIMIT = 800
+    PEERS = []
